@@ -34,13 +34,13 @@ function handleSymbol(symbol){
       if (buffer.length === 1){
         buffer = '0';
       } else {
-        buffer = buffer.toString(0, buffer.length - 1);
+        buffer = buffer.slice(0, buffer.length - 1);
       }
       break;
     
     case '+':
-    case '-':
-    case 'x':
+    case '−':
+    case '×':
     case '÷':
       handleMath(symbol);
       break;
@@ -55,7 +55,7 @@ function handleMath(symbol){
 
   const intBuffer = parseInt(buffer);
 
-  if (runnigTotal === 0){
+  if (runningTotal === 0){
     runningTotal = intBuffer;
   } else {
     flushOperation(intBuffer);
@@ -66,11 +66,11 @@ function handleMath(symbol){
 
 function flushOperation(intBuffer){
   if(previousOperator === '+'){
-    runnigTotal += intBuffer;
-  } else if (previousOperator === '-'){
+    runningTotal += intBuffer;
+  } else if (previousOperator === '−'){
     runningTotal -= intBuffer;
-  } else if (previousOperator === 'x'){
-    rungingTotal *= intBuffer;
+  } else if (previousOperator === '×'){
+    runningTotal *= intBuffer;
   } else if (previousOperator === '÷'){
     runningTotal /= intBuffer;
   }
