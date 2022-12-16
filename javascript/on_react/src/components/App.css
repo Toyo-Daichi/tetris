@@ -1,0 +1,45 @@
+.container {
+  width: 750px;
+  height: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 25%;
+  background-color: red;
+}
+
+.board {
+  width: 100%;
+  height: 75%;
+  background-color: gray;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.board-table {
+  padding: 10px;
+  color: black;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.board-result {
+  padding: 10px;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+
+@media (width<=750px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    width: 80%;
+  }                                                                                                                                                                                       
+}
